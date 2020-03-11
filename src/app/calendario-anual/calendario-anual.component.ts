@@ -36,14 +36,14 @@ export class CalendarioAnualComponent implements OnInit {
     {
       start: new Date(),
       end: new Date(),
-      title: 'title event 1',
+      title: 'evento 1',
       color: this.colors.red,
       actions: this.actions
     },
     {
       start: new Date(),
       end: new Date(),
-      title: 'title event 2',
+      title: 'evento 2',
       color: this.colors.yellow,
       actions: this.actions
     }

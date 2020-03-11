@@ -29,7 +29,7 @@ export class AngularCalendarYearViewComponent implements OnInit {
   actionClicked = new EventEmitter<any>();
 
   loader: any = false;
-  days: any = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+  days: any = ["Do", "Lu", "Ma", "Mi", "Ju", "Vie", "Sa"];
   dayindex: any;
   daydetails: any = {};
   year: any = new Date().getFullYear();
