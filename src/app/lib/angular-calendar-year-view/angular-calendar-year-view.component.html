@@ -2,7 +2,7 @@
     <div class="row">
       <div *ngFor="let Month of calendar;let m =index" class="col-md-3  col-sm-6 col-xs-12 ">
         <div class="monthcontainer ">
-          <p class="monthname">{{Month.date | date:'MMMM'}}</p>
+          <a class="monthname" href="cuatrimestral.html">{{Month.date | date:'MMMM'}}</a>
           <div class="flexdays">
             <div class="day" *ngFor="let label of days">
               {{label}}
@@ -45,7 +45,6 @@
             </span>
             {{event.title}}
           </p>
-          
         </div>
       </div>
       <div class="progressbar_popyear" *ngIf="!daydetails.events||(daydetails.events.length==0)&&!loader">
