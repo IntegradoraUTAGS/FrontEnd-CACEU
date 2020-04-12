@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <div id="main">
-    <nav>
+      <nav>
         <a href="#" class="home">Home</a>
         <a routerLink="/calendarioAnual">Calendario Anual</a>
-        <a routerLink="#/kitchen-sink" class="calendarioCuatrimestral">Calendario mensual</a>
-        <a routerLink="/sesion" class="login">Iniciar Sesion</a>
-     </nav>
+        <a routerLink="#/kitchen-sink" class="calendarioCuatrimestral"
+          >Calendario mensual</a
+        >
+        <a routerLink="/login" class="login">Iniciar Sesion</a>
+      </nav>
     </div>
     <div>
-        <router-outlet></router-outlet>
+      <router-outlet></router-outlet>
     </div>
-</body>
+  </body>
 </html>
