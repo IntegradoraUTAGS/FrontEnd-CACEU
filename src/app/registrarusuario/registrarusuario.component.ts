@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, NavigationExtras} from '@angular/router';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -42,14 +43,28 @@ export class RegistrarusuarioComponent implements OnInit {
   }).subscribe(
         data => {
           console.log(data);
-          alert('EXITO\n'+ this.nombre +' Ha sido registrado con exito!\n'+'Tu solicitud para poder hacer cambios en el calendario ha sido enviada');
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Exito',
+            text: this.nombre +' Ha sido registrado con exito!\n'+'Tu solicitud para poder hacer cambios en el calendario ha sido enviada',
+            showConfirmButton: true
+            
+          })
           this.router.navigate(['calendarioAnual']);
           this.nombre = this.apellidos = this.password = this.puesto = '';
           this.matricula = 0;
         },
         (err) => {
           console.log(err);
-          alert('ERROR\n' + err.error.err.message)
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Error',
+            text: err.error.err.message,
+            showConfirmButton: true
+            
+          })
         }
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, NavigationExtras} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'mwl-login',
@@ -22,13 +23,27 @@ export class LoginComponent implements OnInit {
     }).subscribe(
           data => {
             console.log(data);
-            alert( data.mensaje)
+            //alert( data.mensaje)
+            Swal.fire({
+              position: 'top',
+              icon: 'success',
+              title: data.mensaje,
+              showConfirmButton: true,
+              
+            })
             this.router.navigate(['']);
 
           },
           (err) => {
             console.log(err);
-            alert( 'ERROR\n'+ err.error.err.message);
+            Swal.fire({
+              position: 'center',
+              icon: 'error',
+              title: 'Error',
+              text: err.error.err.message,
+              showConfirmButton: true
+              
+            })
 
           }
 

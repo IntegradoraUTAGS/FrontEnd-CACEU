@@ -29,6 +29,9 @@ export class UsuariosComponent implements OnInit {
                                   <td>${ usuarios.matricula }</td>
                                   <td>${ usuarios.puesto }</td>
                                   <td>${ usuarios.estado }</td>
+                                  <td> <button (click)="activar()" >Permitir</button>
+                                  </td>
+
                                   </td>
                               </tr>
                                      `;
@@ -63,6 +66,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.mostrarUsuarios();
   }
 
 }

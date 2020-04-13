@@ -13,7 +13,6 @@
 
 <body>
     <p class="calendario">Usuarios Registrados</p>
-    <button (click)="mostrarUsuarios()">Mostrar</button>
     <div class="ta">
         <input placeholder="Ingrese Matricula de Usuario" type="text" id="Matricula" />
         <button (click)="activar()">Permitir</button>
@@ -31,10 +30,17 @@
                         <th scope="col">Apellidos</th>
                         <th scope="col">Matricula</th>
                         <th scope="col">Puesto</th>
+                        <th scope="col">Activo</th>
                     </tr>
                 </thead>
 
                 <tbody id="contenido">
+                    <tr>
+                        <td>
+                            <a class="btn btn-default"></a>
+                            <a class="btn btn-danger"></a>
+                        </td>
+                    </tr>
 
                 </tbody>
             </table>
