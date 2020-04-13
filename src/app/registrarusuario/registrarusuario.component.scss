@@ -1,0 +1,115 @@
+body {
+    background: linear-gradient( #83DA9F, #00979B 75%);
+}
+
+.contenedor-centro {
+    border-width: 2px;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+}
+
+img {
+    padding-top: 5px;
+    height: 100px;
+}
+
+.centro {
+    margin: auto;
+    width: 350px;
+    height: 750px;
+    border-radius: 2%;
+}
+
+p {
+    padding-top: 30px;
+    font-size: 32px;
+    color: white
+}
+
+.centro button {
+    float: left;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #3880ff;
+    color: rgb(236, 234, 231);
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button {
+    float: left;
+    margin-top: 30px;
+    width: 255px;
+    border-radius: 6px;
+    margin-left: 20px;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #3880ff;
+    color: rgb(236, 234, 231);
+    padding: 5px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button2 {
+    border-radius: 4px;
+}
+
+mat-form-field {
+    float: left;
+    margin-left: 20px;
+    width: 250px;
+}
+
+label {
+    float: left;
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(109, 106, 106);
+    color: white;
+    font-size: 18px;
+}
+
+select {
+    border-radius: 3%;
+    font-size: 16px;
+    color: rgb(109, 106, 106);
+    float: left;
+    margin-left: 6px;
+}
+
+input[type=text],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: rgb(109, 106, 106);
+    font-size: 16px;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: rgb(109, 106, 106);
+    font-size: 16px;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
