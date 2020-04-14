@@ -9,6 +9,8 @@ import { RouterModule } from '@angular/router';
 import { DemoAppComponent } from './projects/demos/demo-app/demo-app.component';
 import { DemoAppModule1 } from './projects/demos/demo-app/demo-app.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     CalendarioAnualModule,
     DemoAppModule1,
     RouterModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+
   ],
   providers: [],
   schemas:[CUSTOM_ELEMENTS_SCHEMA],

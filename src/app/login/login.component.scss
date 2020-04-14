@@ -1,0 +1,100 @@
+body {
+    background: linear-gradient( #83DA9F, #00979B 75%);
+}
+
+.encabezado {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 46px;
+}
+
+.encabezado p {
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(236, 234, 231);
+}
+
+.contenedor-centro {
+    border-width: 2px;
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+}
+
+.centro {
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    height: 600px;
+    border-radius: 2%;
+}
+
+mat-form-field {
+    float: left;
+    padding-left: 25px;
+    padding-right: 20px;
+    color: rgb(125, 126, 129);
+    width: 250px;
+}
+
+textarea {
+    color: teal;
+}
+
+input {
+    background-color: white;
+    border-radius: 7px;
+    width: 250px;
+    color: gray;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.centro button {
+    border: none;
+    border-radius: 4px;
+    float: left;
+    margin-top: 30px;
+    width: 250px;
+    margin-left: 25px;
+    background-color: #3880ff;
+    color: rgb(236, 234, 231);
+    padding: 5px;
+    font-size: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.calendario {
+    margin-top: 15px;
+    font-size: 25px;
+    color: white;
+}
+
+.mscontraseña {
+    margin-top: 10px;
+    float: left;
+    margin-left: 50px;
+    font-family: 'Angular', arial;
+    font-size: 14px;
+    color: rgb(127, 131, 131);
+}
+
+mat-slide-toggle {
+    float: left;
+    margin-top: 4px;
+    margin-left: 40px;
+}
+
+img {
+    padding-top: 40px;
+    height: 140px;
+    width: 100px;
+}
+
+a {
+    padding-top: 15px;
+    float: right;
+    padding-right: 50px;
+    color: rgb(127, 131, 131);
+}

@@ -1,0 +1,40 @@
+<body>
+    <div class="contenedor-centro">
+        <div class="centro">
+            <p> Registrate</p>
+
+
+            <label for="fname">Nombre</label>
+            <input matInput placeholder="Ingresa tu Nombre" type="text" class="form-control" id="nombre" value={{nombre}} required>
+            <br>
+            <label for="fname">Apellidos</label>
+            <input matInput placeholder="Ingresa tus Apellidos" type="text" class="form-control" id="apellidos" value={{apellidos}} required>
+            <br>
+            <label for="fname">Matricula</label>
+            <input matInput placeholder="Ingresa tu Matricula" type="text" class="form-control" id="matricula" value={{matricula}} required>
+            <br>
+            <label for="fname">Contraseña</label>
+            <input matInput placeholder="Ingresa tu Contraseña" type="password" id="contraseña" class="form-control" value={{password}} required>
+            <br>
+            <label for="fname">Confirmar Contraseña</label>
+            <input matInput placeholder="Confirma tu Contraseña" type="password" class="form-control" id="confirmacion" value={{password}} required>
+            <br>
+            <label for="puesto">Elige tu Rol:</label>
+            <select id="puesto">
+            <option value="Administrativo" >Administrativo</option>
+            <option value="Encargado de Area">Encargado de Area</option>
+            <option value="Profesor">Profesor</option>
+            <option value="Estudiante" >Estudiante</option>
+            </select>
+
+
+
+
+
+
+            <button mat-raised-button (click)="guardar()">Guardar</button>
+
+        </div>
+
+    </div>
+</body>
