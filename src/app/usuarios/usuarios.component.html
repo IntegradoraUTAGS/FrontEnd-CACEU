@@ -14,10 +14,8 @@
 <body>
     <p class="calendario">Usuarios Registrados</p>
     <div class="ta">
-        <input placeholder="Ingrese Matricula de Usuario" type="text" id="Matricula" />
-        <button (click)="activar()">Permitir</button>
 
-        <br><br>
+
 
 
         <div id="Layer1" style=" height: 500px; overflow: scroll;">
@@ -45,7 +43,12 @@
                 </tbody>
             </table>
         </div>
-
+        <br>
+        <input placeholder="Ingrese Matricula de Usuario" type="text" id="Matricula" />
+        <button (click)="activar()">Permitir</button>
+        <input placeholder="Ingrese Matricula de Usuario" type="text" id="Matricula2" />
+        <button (click)="desactivar()" style="background-color: rgb(248, 50, 50);">Denegar</button>
+        <hr>
     </div>
 
 </body>

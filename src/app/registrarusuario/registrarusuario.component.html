@@ -1,9 +1,9 @@
 <body>
     <div class="contenedor-centro">
         <div class="centro">
-            <p> Registrate</p>
-
-
+            <p> Registro</p>
+            <br>
+            <!--
             <label for="fname">Nombre</label>
             <input matInput placeholder="Ingresa tu Nombre" type="text" class="form-control" id="nombre" value={{nombre}} required>
             <br>
@@ -26,12 +26,55 @@
             <option value="Profesor">Profesor</option>
             <option value="Estudiante" >Estudiante</option>
             </select>
+-->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Nombre</span>
+                </div>
+                <input class="form-control" aria-label="Sizing example input" id="nombre" value={{nombre}} aria-describedby="inputGroup-sizing-default">
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Apellidos</span>
+                </div>
+                <input class="form-control" aria-label="Sizing example input" id="apellidos" value={{apellidos}} aria-describedby="inputGroup-sizing-default">
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Matricula</span>
+                </div>
+                <input class="form-control" aria-label="Sizing example input" id="matricula" value={{matricula}} aria-describedby="inputGroup-sizing-default">
+
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
+                </div>
+                <input type="password" class="form-control" aria-label="Sizing example input" id="contrasena" value={{contrasena}} aria-describedby="inputGroup-sizing-default">
+
+            </div>
+            <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Contraseña</span>
+                </div>
+                <input type="password" placeholder="Confirma tu contraseña" class="form-control" id="confirmacion" value={{confirmacion}} aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+            </div>
 
 
 
+            <select id="puesto">
+            <option  >Elige tu Rol</option>
 
-
-
+            <option value="Administrativo" >Administrativo</option>
+            <option value="Encargado de Area">Encargado de Area</option>
+            <option value="Profesor">Profesor</option>
+            <option value="Estudiante" >Estudiante</option>
+            </select>
             <button mat-raised-button (click)="guardar()">Guardar</button>
 
         </div>
