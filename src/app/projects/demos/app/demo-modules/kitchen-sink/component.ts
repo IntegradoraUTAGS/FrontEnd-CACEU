@@ -22,6 +22,7 @@ import {
   CalendarEventTimesChangedEvent,
   CalendarView
 } from 'angular-calendar';
+import { HttpClient } from '@angular/common/http';
 
 const colors: any = {
   red: {
@@ -118,7 +119,7 @@ export class DemoComponent {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal, private httpClient: HttpClient) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
@@ -164,7 +165,7 @@ export class DemoComponent {
         title: 'Nuevo Evento',
         start: startOfDay(new Date()),
         end: endOfDay(new Date()),
-        color: colors.red,
+        color: colors.red
       }
     ];
   }
@@ -179,5 +180,63 @@ export class DemoComponent {
 
   closeOpenMonthViewDay() {
     this.activeDayIsOpen = false;
+  }
+
+  mostrarEventos() {
+    return this.httpClient
+      .get('http://localhost:3000/evento/obtener', {})
+      .subscribe(
+        data => {
+          console.log(data.eventos);
+          let i = 0;
+          document.getElementById('contenido').innerHTML = '';
+          for (let eventos of data.eventos) {
+            i = i++;
+
+            this.events = [
+              ...this.events,
+              {
+                title: eventos.nombre,
+                start: eventos.fechaInicio,
+                end: eventos.fechaFinal,
+                color: colors.red,
+                draggable: true,
+                resizable: {
+                  beforeStart: true,
+                  afterEnd: true
+                }
+              }
+            ];
+            document.getElementById('contenido').innerHTML += `
+                              
+                              <tr>
+                                  <th scope="row">${eventos.nombre}</th>
+                                  <td>${eventos.tipo}</td>
+                                  <td>${eventos.enfocado}</td>
+                                  <td>${eventos.fechaInicio}</td>
+                                  <td>${eventos.fechaFinal}</td>
+                                  <td>${eventos.descripcion}</td>
+                                  <td>${eventos.repetir}</td>
+                                  <td>${eventos.lugar}</td>
+                                  <td>${eventos.hora}</td>
+                                  <td>${eventos.capacidad}</td>
+                                  <td>${eventos.detalles}</td>
+
+                                  </td>
+
+                                  </td>
+                              </tr>                          
+                              `;
+          }
+        },
+        err => {
+          console.log(err);
+          alert('ERROR\n' + err.error.err.message);
+        }
+      );
+  }
+
+  ngOnInit() {
+    this.mostrarEventos();
   }
 }

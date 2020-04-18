@@ -11,12 +11,14 @@ import { DemoAppModule1 } from './projects/demos/demo-app/demo-app.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+import { FormEventComponent } from './form-event/form-event.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarioAnualComponent,
-    DemoAppComponent
+    DemoAppComponent,
+    FormEventComponent
   ],
   imports: [
     BrowserModule,
@@ -27,10 +29,9 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule,
     FormsModule,
     HttpClientModule
-
   ],
   providers: [],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

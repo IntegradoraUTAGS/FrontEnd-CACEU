@@ -16,6 +16,7 @@ import { DemoModule as DefaultDemoModule } from './demo-modules/kitchen-sink/mod
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from 'ngx-clipboard';
+import { FormEventComponent } from '../../../form-event/form-event.component';
 
 @NgModule({
   declarations: [DemoAppComponent],
@@ -35,6 +36,10 @@ import { ClipboardModule } from 'ngx-clipboard';
     DefaultDemoModule,
     RouterModule.forRoot(
       [
+        {
+          path: 'formEvent',
+          component: FormEventComponent
+        },
         {
           path: 'kitchen-sink',
           component: DefaultDemoComponent,
