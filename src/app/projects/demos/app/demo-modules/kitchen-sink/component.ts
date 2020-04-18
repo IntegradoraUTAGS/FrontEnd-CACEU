@@ -25,16 +25,13 @@ import {
 
 const colors: any = {
   red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
+    primary: '#ad2121'
   },
   blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF'
+    primary: '#1e90ff'
   },
   yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
+    primary: '#e3bc08'
   }
 };
 
@@ -82,7 +79,7 @@ export class DemoComponent {
     {
       start: subDays(startOfDay(new Date()), 1),
       end: addDays(new Date(), 1),
-      title: 'A 3 day event',
+      title: 'A 3 dias del evento',
       color: colors.red,
       actions: this.actions,
       allDay: true,
@@ -94,21 +91,21 @@ export class DemoComponent {
     },
     {
       start: startOfDay(new Date()),
-      title: 'An event with no end date',
+      title: 'Un evento sin fecha de finalización',
       color: colors.yellow,
       actions: this.actions
     },
     {
       start: subDays(endOfMonth(new Date()), 3),
       end: addDays(endOfMonth(new Date()), 3),
-      title: 'A long event that spans 2 months',
+      title: 'Un evento largo que abarca 2 meses.',
       color: colors.blue,
       allDay: true
     },
     {
       start: addHours(startOfDay(new Date()), 2),
       end: addHours(new Date(), 2),
-      title: 'A draggable and resizable event',
+      title: 'Un evento arrastrable y redimensionable',
       color: colors.yellow,
       actions: this.actions,
       resizable: {
@@ -164,15 +161,10 @@ export class DemoComponent {
     this.events = [
       ...this.events,
       {
-        title: 'New event',
+        title: 'Nuevo Evento',
         start: startOfDay(new Date()),
         end: endOfDay(new Date()),
         color: colors.red,
-        draggable: true,
-        resizable: {
-          beforeStart: true,
-          afterEnd: true
-        }
       }
     ];
   }

@@ -12,9 +12,9 @@ export class LoginComponent implements OnInit {
   constructor(private httpClient: HttpClient, private router: Router) {}
 
   postlogin() {
-   let matricula = document.getElementById('usuario').value
+   let matricula = document.getElementById('usuario').value 
     let password = document.getElementById('password').value
-
+ 
     console.log(matricula);
     console.log(password);
     return this.httpClient.post('http://localhost:3000/login/iniciar', {
