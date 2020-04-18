@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { RegistrarusuarioComponent } from './registrarusuario/registrarusuario.component';
 import { collapseAnimation } from './projects/angular-calendar/src/modules/month/calendar-open-day-events.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
+import { FormEventComponent } from '../app/form-event/form-event.component';
 const routes: Routes = [
   {
     path: 'calendarioAnual',
@@ -21,11 +22,16 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path:'registrar',
-    component:RegistrarusuarioComponent
-  },{
-    path:'usuarios',
+    path: 'registrar',
+    component: RegistrarusuarioComponent
+  },
+  {
+    path: 'usuarios',
     component: UsuariosComponent
+  },
+  {
+    path: 'formEvent',
+    component: FormEventComponent
   }
 ];
 

@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule]
 })
-export class DemoAppModule { }
+export class DemoAppModule {}
+import { FormEventComponent } from '../../../form-event/form-event.component';
+
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -44,6 +44,10 @@ import { ClipboardModule } from 'ngx-clipboard';
     DefaultDemoModule,
     RouterModule.forRoot(
       [
+        {
+          path: 'formEvent',
+          component: FormEventComponent
+        },
         {
           path: 'kitchen-sink',
           component: DefaultDemoComponent,
@@ -264,9 +268,9 @@ import { ClipboardModule } from 'ngx-clipboard';
         {
           path: 'additional-event-properties',
           loadChildren: () =>
-            import('../app/demo-modules/additional-event-properties/module').then(
-              m => m.DemoModule
-            ),
+            import(
+              '../app/demo-modules/additional-event-properties/module'
+            ).then(m => m.DemoModule),
           data: {
             label: 'Additional event properties'
           }
@@ -335,9 +339,9 @@ import { ClipboardModule } from 'ngx-clipboard';
         {
           path: 'week-view-minute-precision',
           loadChildren: () =>
-            import('../app/demo-modules/week-view-minute-precision/module').then(
-              m => m.DemoModule
-            ),
+            import(
+              '../app/demo-modules/week-view-minute-precision/module'
+            ).then(m => m.DemoModule),
           data: {
             label: 'Week view minute precision'
           }
@@ -413,7 +417,9 @@ import { ClipboardModule } from 'ngx-clipboard';
         {
           path: 'dark-theme',
           loadChildren: () =>
-            import('../app/demo-modules/dark-theme/module').then(m => m.DemoModule),
+            import('../app/demo-modules/dark-theme/module').then(
+              m => m.DemoModule
+            ),
           data: {
             label: 'Dark theme',
             darkTheme: true
@@ -432,9 +438,9 @@ import { ClipboardModule } from 'ngx-clipboard';
         {
           path: 'customise-current-time-marker',
           loadChildren: () =>
-            import('../app/demo-modules/customise-current-time-marker/module').then(
-              m => m.DemoModule
-            ),
+            import(
+              '../app/demo-modules/customise-current-time-marker/module'
+            ).then(m => m.DemoModule),
           data: {
             label: 'Customise current time marker'
           }
