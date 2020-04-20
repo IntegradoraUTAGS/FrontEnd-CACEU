@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'mwl-usuarios',
@@ -8,7 +9,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsuariosComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+   
+   }
 
   mostrarUsuarios(){
     return this.httpClient.post('http://localhost:3000/usuario/obtener', {
@@ -29,8 +32,7 @@ export class UsuariosComponent implements OnInit {
                                   <td>${ usuarios.matricula }</td>
                                   <td>${ usuarios.puesto }</td>
                                   <td>${ usuarios.estado }</td>
-                                  <td> <button (click)="activar()" >Permitir</button>
-                                  </td>
+                                  <td>  </td>
 
                                   </td>
                               </tr>
@@ -50,20 +52,82 @@ export class UsuariosComponent implements OnInit {
         );
 
   }
+  
   activar(){
-    let matricula = document.getElementById('Matricula').value;
+
+    Swal.fire({
+      title: 'Estas Seguro?',
+      text: "Daras permisos de Modificaciones a este Usuario",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Permitir'
+    }).then((result) => {
+      let matricula = document.getElementById('Matricula').value
     console.log(matricula);
-    return this.httpClient.post('http://localhost:3000/usuario/actualizar/estado', {
+    console.log('activado')
+    if (result.value) {
+        return this.httpClient.post('http://localhost:3000/usuario/actualizar/estado/permitir', {
         matricula
     }).subscribe(
           data => {
             console.log(data);
+            this.mostrarUsuarios();
+            Swal.fire(
+              'Hecho!',
+              'Usuario Permitido.',
+              'success'
+            )
           },
           (err) => {
             console.log(err);
           }
         );
+        
+      }
+    })
+    
+
   }
+
+  desactivar(){
+    Swal.fire({
+      title: 'Estas Seguro?',
+      text: "Removeras permisos de Modificaciones y acceso al sistema a este Usuario ",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Confirmar'
+    }).then((result) => {
+      if (result.value) {
+        let matricula = document.getElementById('Matricula2').value
+    console.log(matricula);
+    console.log('activado')
+    return this.httpClient.post('http://localhost:3000/usuario/actualizar/estado/denegar', {
+        matricula
+    }).subscribe(
+          data => {
+            console.log(data);
+            this.mostrarUsuarios();
+            Swal.fire(
+              'Hecho!',
+              'Este usuario no tiene mas permisos de Modificar.',
+              'success'
+            )
+          },
+          (err) => {
+            console.log(err);
+          }
+        );
+
+      }
+    })
+
+    
+  }
+
 
   ngOnInit() {
     this.mostrarUsuarios();

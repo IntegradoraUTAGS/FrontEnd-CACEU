@@ -23,7 +23,7 @@ export class RegistrarusuarioComponent implements OnInit {
     this.nombre = document.getElementById('nombre').value
     this.apellidos = document.getElementById('apellidos').value
     this.matricula = document.getElementById('matricula').value
-    this.password = document.getElementById('contraseña').value
+    this.password = document.getElementById('contrasena').value
     this.confirmacion = document.getElementById('confirmacion').value
     this.puesto = document.getElementById('puesto').value
     console.log(this.nombre);
@@ -45,7 +45,7 @@ export class RegistrarusuarioComponent implements OnInit {
           console.log(data);
           Swal.fire({
             position: 'center',
-            icon: 'error',
+            icon: 'success',
             title: 'Exito',
             text: this.nombre +' Ha sido registrado con exito!\n'+'Tu solicitud para poder hacer cambios en el calendario ha sido enviada',
             showConfirmButton: true
@@ -70,7 +70,14 @@ export class RegistrarusuarioComponent implements OnInit {
 
       );
       }else{
-        alert('Favor de confirmar tu contraseña');
+        Swal.fire({
+          position: 'center',
+          icon: 'info',
+          title: 'Ha Ocurrido un Error',
+          text: 'Favor de Confirmar tu Contraseña',
+          showConfirmButton: true
+          
+        })
       }
 
 
@@ -79,6 +86,14 @@ export class RegistrarusuarioComponent implements OnInit {
   }
 
   ngOnInit() {
+    Swal.fire({
+      position: 'center',
+      icon: 'info',
+      title: 'Bienvenido al Registro',
+      text: 'Al registrarte se envia una solicitud para que un usuario pueda hacer modificaciones sobre el calendario, por lo cual solo se le dara acceso a personal autorizado',
+      showConfirmButton: true
+      
+    })
   }
 
 }
