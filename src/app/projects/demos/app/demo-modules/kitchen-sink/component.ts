@@ -186,7 +186,7 @@ export class DemoComponent {
     return this.httpClient
       .get('http://localhost:3000/evento/obtener', {})
       .subscribe(
-        data => {
+        (data: any) => {
           console.log(data.eventos);
           let i = 0;
           document.getElementById('contenido').innerHTML = '';
