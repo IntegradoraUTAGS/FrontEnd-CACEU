@@ -184,7 +184,7 @@ export class DemoComponent {
 
   mostrarEventos() {
     return this.httpClient
-      .get('http://localhost:3000/evento/obtener', {})
+      .get('http://172.17.1.7:5023/evento/obtener', {})
       .subscribe(
         (data: any) => {
           console.log(data.eventos);
