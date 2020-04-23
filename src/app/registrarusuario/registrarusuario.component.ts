@@ -34,7 +34,7 @@ export class RegistrarusuarioComponent implements OnInit {
     console.log(this.puesto);
  
     if(this.password === this.confirmacion){
-    return this.httpClient.post('http://localhost:3000/usuario/registrar', {
+    return this.httpClient.post('http://172.17.1.7:5023/usuario/registrar', {
       nombre: this.nombre,
       apellidos: this.apellidos,
       matricula: this.matricula,

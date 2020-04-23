@@ -14,7 +14,7 @@ export class UsuariosComponent implements OnInit {
    }
 
   mostrarUsuarios(){
-    return this.httpClient.post('http://localhost:3000/usuario/obtener', {
+    return this.httpClient.post('http://172.17.1.7:5023/usuario/obtener', {
         
     }).subscribe(
           data => {
@@ -70,7 +70,7 @@ export class UsuariosComponent implements OnInit {
     console.log(matricula);
     console.log('activado')
     if (result.value) {
-        return this.httpClient.post('http://localhost:3000/usuario/actualizar/estado/permitir', {
+        return this.httpClient.post('http://172.17.1.7:5023/usuario/actualizar/estado/permitir', {
         matricula
     }).subscribe(
           data => {
@@ -107,7 +107,7 @@ export class UsuariosComponent implements OnInit {
         let matricula = (<HTMLInputElement>document.getElementById('Matricula2')).value
     console.log(matricula);
     console.log('activado')
-    return this.httpClient.post('http://localhost:3000/usuario/actualizar/estado/denegar', {
+    return this.httpClient.post('http://172.17.1.7:5023/usuario/actualizar/estado/denegar', {
         matricula
     }).subscribe(
           data => {
