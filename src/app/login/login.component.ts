@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router, NavigationExtras} from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -12,43 +12,42 @@ export class LoginComponent implements OnInit {
   constructor(private httpClient: HttpClient, private router: Router) {}
 
   postlogin() {
-   let matricula = document.getElementById('usuario').value
-    let password = document.getElementById('password').value
+    let matricula = (<HTMLInputElement>document.getElementById('usuario'))
+      .value;
+
+    let password = (<HTMLInputElement>document.getElementById('password'))
+      .value;
 
     console.log(matricula);
     console.log(password);
-    return this.httpClient.post('http://localhost:3000/login/iniciar', {
+    return this.httpClient
+      .post('http://localhost:3000/login/iniciar', {
         matricula,
-       password
-    }).subscribe(
-          data => {
-            console.log(data);
-            //alert( data.mensaje)
-            Swal.fire({
-              position: 'top',
-              icon: 'success',
-              title: data.mensaje,
-              showConfirmButton: true,
-              
-            })
-            this.router.navigate(['']);
-
-          },
-          (err) => {
-            console.log(err);
-            Swal.fire({
-              position: 'center',
-              icon: 'error',
-              title: 'Error',
-              text: err.error.err.message,
-              showConfirmButton: true
-              
-            })
-
-          }
-
-
-        );
+        password
+      })
+      .subscribe(
+        data => {
+          console.log(data);
+          //alert( data.mensaje)
+          Swal.fire({
+            position: 'top',
+            icon: 'success',
+            title: 'Bienvenido al Calendario Academico',
+            showConfirmButton: true
+          });
+          this.router.navigate(['']);
+        },
+        err => {
+          console.log(err);
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: 'Error',
+            text: err.error.err.message,
+            showConfirmButton: true
+          });
+        }
+      );
   }
 
   ngOnInit() {}
