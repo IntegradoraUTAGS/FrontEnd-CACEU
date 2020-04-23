@@ -35,7 +35,7 @@ nav {
 nav {
     display: inline-block;
     margin: 0px auto 45px;
-    background-color: #aaa;
+    background-color: rgb(180, 178, 178);
     box-shadow: 0 1px 1px #ccc;
     border-radius: 2px;
     justify-content: space-between;

@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 export class RegistrarusuarioComponent implements OnInit {
   nombre:string;
   apellidos:string;
-  matricula: number;
+  matricula: string;
   password: string;
   confirmacionpassword: string;
   confirmacion:string;
@@ -20,12 +20,12 @@ export class RegistrarusuarioComponent implements OnInit {
   constructor(private httpClient: HttpClient, private router: Router) { }
   
   guardar(){
-    this.nombre = document.getElementById('nombre').value
-    this.apellidos = document.getElementById('apellidos').value
-    this.matricula = document.getElementById('matricula').value
-    this.password = document.getElementById('contrasena').value
-    this.confirmacion = document.getElementById('confirmacion').value
-    this.puesto = document.getElementById('puesto').value
+    this.nombre = (<HTMLInputElement>document.getElementById('nombre')).value
+    this.apellidos = (<HTMLInputElement>document.getElementById('apellidos')).value
+    this.matricula = (<HTMLInputElement>document.getElementById('matricula')).value
+    this.password = (<HTMLInputElement>document.getElementById('contrasena')).value
+    this.confirmacion = (<HTMLInputElement>document.getElementById('confirmacion')).value
+    this.puesto = (<HTMLInputElement>document.getElementById('puesto')).value
     console.log(this.nombre);
     console.log(this.apellidos);
     console.log(this.matricula);
@@ -52,8 +52,7 @@ export class RegistrarusuarioComponent implements OnInit {
             
           })
           this.router.navigate(['calendarioAnual']);
-          this.nombre = this.apellidos = this.password = this.puesto = '';
-          this.matricula = 0;
+          this.nombre = this.apellidos = this.password = this.puesto = this.matricula = '';
         },
         (err) => {
           console.log(err);

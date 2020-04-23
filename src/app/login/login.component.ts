@@ -2,24 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router, NavigationExtras} from '@angular/router';
 import Swal from 'sweetalert2';
-
 @Component({
   selector: 'mwl-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  constructor(private httpClient: HttpClient, private router: Router) {}
+  matricula: string;
+  password: string;
+  constructor(private httpClient: HttpClient, private router: Router) {
+    this.password = '';
+    this.matricula = '';
+  }
 
   postlogin() {
-   let matricula = document.getElementById('usuario').value 
-    let password = document.getElementById('password').value
- 
-    console.log(matricula);
-    console.log(password);
+   this.matricula = (<HTMLInputElement>document.getElementById('usuario')).value
+   this.password = (<HTMLInputElement>document.getElementById('password')).value
+    console.log(this.matricula);
+    console.log(this.password);
     return this.httpClient.post('http://localhost:3000/login/iniciar', {
-        matricula,
-       password
+        matricula: this.matricula,
+       password: this.password
     }).subscribe(
           data => {
             console.log(data);
@@ -27,7 +30,7 @@ export class LoginComponent implements OnInit {
             Swal.fire({
               position: 'top',
               icon: 'success',
-              title: data.mensaje,
+              title: 'Bienvenido ',
               showConfirmButton: true,
               
             })

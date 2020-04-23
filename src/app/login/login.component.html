@@ -9,13 +9,15 @@
 
 <body>
     <div class="contenedor-centro">
+        <img src="../assets/uta.png" />
         <div class="centro">
-            <img src="../assets/user2.png" />
+
             <p class="calendario">Calendario Academico</p>
 
-            <input placeholder="Usuario" type="text" id="usuario" />
+            <input mat-input placeholder="Usuario" type="text" id="usuario" ([ngModel])="matricula">
             <br />
-            <input placeholder="Contraseña" id="password" type="password" />
+            <input placeholder="Contraseña" id="password" type="password" ([ngModel])="password">
+
 
             <!--<p class="mscontraseña ">Mostrar Contraseña</p>
 
