@@ -8,9 +8,9 @@ import Swal from 'sweetalert2';
   styleUrls: ['./usuarios.component.scss']
 })
 export class UsuariosComponent implements OnInit {
-
+   users:any;
   constructor(private httpClient: HttpClient) {
-   
+   this.users=[];
    }
 
   mostrarUsuarios(){
@@ -18,10 +18,12 @@ export class UsuariosComponent implements OnInit {
         
     }).subscribe(
           data => {
-            console.log(data.usuarios);
+            this.users = data;
+            console.log(this.users);
+
             let i = 0;
             document.getElementById('contenido').innerHTML = '';
-            for (let usuarios of data.usuarios) {
+            for (let usuarios of this.users.usuarios) {
             i = i++;
 
             document.getElementById('contenido').innerHTML += `
@@ -64,7 +66,7 @@ export class UsuariosComponent implements OnInit {
       cancelButtonColor: '#d33',
       confirmButtonText: 'Permitir'
     }).then((result) => {
-      let matricula = document.getElementById('Matricula').value
+      let matricula = (<HTMLInputElement>document.getElementById('Matricula')).value
     console.log(matricula);
     console.log('activado')
     if (result.value) {
@@ -102,7 +104,7 @@ export class UsuariosComponent implements OnInit {
       confirmButtonText: 'Confirmar'
     }).then((result) => {
       if (result.value) {
-        let matricula = document.getElementById('Matricula2').value
+        let matricula = (<HTMLInputElement>document.getElementById('Matricula2')).value
     console.log(matricula);
     console.log('activado')
     return this.httpClient.post('http://localhost:3000/usuario/actualizar/estado/denegar', {

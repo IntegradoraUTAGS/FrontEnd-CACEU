@@ -25,18 +25,18 @@ export class FormEventComponent implements OnInit {
   ngOnInit() {}
 
   guardar() {
-    this.nombre = document.getElementById('nombre').value;
-    this.tipo = document.getElementById('tipo').value;
-    this.enfoque = document.getElementById('enfoque').value;
-    this.fechaInicio = document.getElementById('fechaInicio').value;
-    this.fechaFinal = document.getElementById('fechaFinal').value;
-    this.descripcion = document.getElementById('descripcion').value;
-    this.repetir = document.getElementById('repetir').value;
-    this.lugar = document.getElementById('lugar').value;
-    this.hora = document.getElementById('hora').value;
-    this.capacidad = document.getElementById('capacidad').value;
-    this.detalles = document.getElementById('detalles').value;
-    this.usuario = document.getElementById('usuario').value;
+    this.nombre = (<HTMLInputElement>document.getElementById('nombre')).value
+    this.tipo = (<HTMLInputElement>document.getElementById('tipo')).value
+    this.enfoque = (<HTMLInputElement>document.getElementById('enfoque')).value
+    this.fechaInicio = (<HTMLInputElement>document.getElementById('fechaInicio')).value
+    this.fechaFinal = (<HTMLInputElement>document.getElementById('fechaFinal')).value
+    this.descripcion = (<HTMLInputElement>document.getElementById('descripcion')).value
+    this.repetir = (<HTMLInputElement>document.getElementById('repetir')).value
+    this.lugar = (<HTMLInputElement>document.getElementById('lugar')).value
+    this.hora = (<HTMLInputElement>document.getElementById('hora')).value
+    this.capacidad = (<HTMLInputElement>document.getElementById('capacidad')).value
+    this.detalles = (<HTMLInputElement>document.getElementById('detalles')).value
+    this.usuario = (<HTMLInputElement>document.getElementById('usuario')).value
 
     console.log(this.nombre);
     console.log(this.tipo);

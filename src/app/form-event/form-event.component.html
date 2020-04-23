@@ -1,52 +1,111 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <title>Document</title>
-  </head>
-  <body>
-    <div class="centro">
-      <p class="calendario">Agregar nuevo evento</p>
+</head>
 
-      <input placeholder="Nombre del evento" type="text" id="nombre" />
+<body>
+    <div class="centro" style="margin-left: 450px;">
 
-      <br />
 
-      <input placeholder="Tipo de evento" type="text" id="tipo" />
+        <div class="izq">
+            <p class="calendario">Agregar Evento</p>
+            <br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Nombre</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Nombre del Evento" id="nombre" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
 
-      <br />
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Tipo</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Tipo de Evento" id="tipo" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Enfoque</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Enfoque del Evento" id="enfoque" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Fecha Inicio</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Fecha de Inicio" id="fechaInicio" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Fecha de Conclusion</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Fecha en que termina el Evento" id="fechaFinal" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Tipo</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Tipo de Evento" id="tipo" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Descripcion</span>
+                </div>
+                <textarea class="form-control" placeholder="Pequeña Descripcion" id="descripcion" aria-label="With textarea"></textarea>
+            </div>
+            <br>
+            <hr><br>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Repetir</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Que tan Seguido se Repite" id="repetir" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Lugar</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Lugar del Evento" id="lugar" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Hora</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Hora del Evento" id="hora" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Capacidad</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Capacidad Del Evento" id="capicidad" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Detalles</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Detalles del Evento" id="detalles" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Usuario</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Ingresa tu Matricula" id="usuario" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <button class="btn" (click)='guardar()'>Guardar</button>
+            <hr>
 
-      <input placeholder="A que va enfocado" type="text" id="enfoque" /> <br />
-
-      <input placeholder="Fecha de inicio" type="text" id="fechaInicio" />
-      <br />
-
-      <input placeholder="Fecha de termino" type="text" id="fechaFinal" />
-      <br />
-
-      <input placeholder="descripcion pequeña" type="text" id="descripcion" />
-      <br />
-
-      <input placeholder="Repetir" type="text" id="repetir" />
-      <br />
-
-      <input placeholder="Lugar del evento" type="text" id="lugar" />
-      <br />
-
-      <input placeholder="Hora del evento" type="text" id="hora" />
-      <br />
-
-      <input placeholder="capacidad de personas" type="text" id="capacidad" />
-      <br />
-
-      <input placeholder="detalles del evento" type="text" id="detalles" />
-      <br />
-
-      <input placeholder="Usuario que registro" type="text" id="usuario" />
-      <br />
-      <button class="btn btn-danger" (click)="guardar()">Guardar</button>
-      <br />
+        </div>
     </div>
-  </body>
+
+    <br>
+
+</body>
+
 </html>

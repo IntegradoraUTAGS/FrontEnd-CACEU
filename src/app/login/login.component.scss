@@ -1,10 +1,7 @@
-body {
-    background: linear-gradient( #83DA9F, #00979B 75%);
-}
+body {}
 
 .encabezado {
     text-align: center;
-    padding-top: 10px;
     font-size: 46px;
 }
 
@@ -17,14 +14,13 @@ body {
     border-width: 2px;
     width: 100%;
     text-align: center;
-    padding-top: 60px;
 }
 
 .centro {
     margin: auto;
     text-align: center;
     width: 300px;
-    height: 600px;
+    height: 400px;
     border-radius: 2%;
 }
 
@@ -59,6 +55,7 @@ input {
     width: 250px;
     margin-left: 25px;
     background-color: #3880ff;
+    background-color: #048061;
     color: rgb(236, 234, 231);
     padding: 5px;
     font-size: 20px;
@@ -66,9 +63,9 @@ input {
 }
 
 .calendario {
-    margin-top: 15px;
-    font-size: 25px;
-    color: white;
+    font-size: 28px;
+    color: #048061;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .mscontraseña {
@@ -87,9 +84,8 @@ mat-slide-toggle {
 }
 
 img {
-    padding-top: 40px;
-    height: 140px;
-    width: 100px;
+    width: 450px;
+    height: 200px;
 }
 
 a {
