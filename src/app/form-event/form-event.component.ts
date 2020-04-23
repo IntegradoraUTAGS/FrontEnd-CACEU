@@ -53,7 +53,7 @@ export class FormEventComponent implements OnInit {
     console.log(this.usuario);
 
     return this.httpClient
-      .post('http://localhost:3000/evento/registrar', {
+      .post('http://172.17.1.7:5023/evento/registrar', {
         nombre: this.nombre,
         tipo: this.tipo,
         enfoque: this.enfoque,

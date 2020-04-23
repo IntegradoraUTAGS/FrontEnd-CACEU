@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
    this.password = (<HTMLInputElement>document.getElementById('password')).value
     console.log(this.matricula);
     console.log(this.password);
-    return this.httpClient.post('http://localhost:3000/login/iniciar', {
+    return this.httpClient.post('http://172.17.1.7:5023/login/iniciar', {
         matricula: this.matricula,
        password: this.password
     }).subscribe(
