@@ -76,7 +76,7 @@
     "@types/node": "^12.12.34",
     "@types/sinon": "^7.5.2",
     "@types/sinon-chai": "^3.2.3",
-    "angular-cli-ghpages": "^0.5.3",
+    "angular-cli-ghpages": "^1.0.5",
     "angulartics2": "^8.3.0",
     "angularx-flatpickr": "^6.3.1",
     "autoprefixer": "^9.7.4",
